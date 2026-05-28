@@ -18,6 +18,13 @@ import {
   tmdbImage,
 } from "@/lib/tmdb";
 
+/* === ISR CONFIG ============================================ */
+/* ── Cache the rendered page; revalidate every 24h ── */
+export const revalidate = 86400;
+
+/* ── Allow on-demand generation of non-prebuilt pages ── */
+export const dynamicParams = true;
+
 export async function generateMetadata({
   params,
 }: SeriePageProps): Promise<Metadata> {
