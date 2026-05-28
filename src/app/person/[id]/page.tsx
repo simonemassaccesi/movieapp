@@ -19,6 +19,13 @@ import { toMovie } from "@/lib/utils";
 import type { Metadata } from "next";
 import ShareButton from "@/components/ui/ShareButton";
 
+/* === ISR CONFIG ============================================ */
+/* ── Cache the rendered page; revalidate every 24h ── */
+export const revalidate = 86400;
+
+/* ── Allow on-demand generation of non-prebuilt pages ── */
+export const dynamicParams = true;
+
 export async function generateMetadata({
   params,
 }: PersonPageProps): Promise<Metadata> {
